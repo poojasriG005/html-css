@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Baskets | CraftRoot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Galada&family=Gafata&family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+/* ================= HEADER (EXACT SAME AS INDEX) ================= */
+.banner1 {
+    background-color: #5b0101;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#shopname {
+    font-family: 'Galada', cursive;
+    font-size: 26px;
+    margin: 0;
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 360px;
+    height: 32px;
+    border-radius: 20px;
+    border: none;
+    padding: 0 15px;
+}
+
+.option ul {
+    list-style: none;
+    display: flex;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.option ul li a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+body{
+    margin:0;
+    font-family:'Gafata',sans-serif;
+    background:#f4efe9;
+}
+
+.page-title{
+    text-align:center;
+    margin:40px 0;
+    color:#5b0101;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    padding:0 40px 60px;
+}
+
+.card{
+    background:#fff;
+    border-radius:14px;
+    padding:15px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.price{
+    color:#c59d5f;
+    font-weight:bold;
+}
+
+.rating{
+    color:gold;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.actions button{
+    flex:1;
+    padding:8px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    color:#fff;
+    font-size:13px;
+}
+
+.cart-btn{background:#5b0101;}
+.wish-btn{background:#b03a2e;}
+
+@media(max-width:900px){
+    .products{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+    .products{grid-template-columns:1fr;}
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:#5b0101;
+    color:#eee;
+    padding:60px 40px 20px;
+    font-family:Poppins, sans-serif;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.footer-col h3{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+.footer-col p, .footer-col ul li a{
+    font-size:14px;
+    color:#ccc;
+    text-decoration:none;
+}
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid #333;
+    margin-top:40px;
+    padding-top:20px;
+    font-size:13px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="banner1">
+    <!-- LOGO -->
+    <h1 id="shopname">CraftRoot</h1>
+
+    <!-- CENTER SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Search handcrafted treasures…">
+    </div>
+
+    <!-- RIGHT MENU -->
+    <div style="display:flex; align-items:center; gap:15px;">
+        <a href="index.html" style="text-decoration:none; color:white;">HOME</a>
+        <a href="bestseller.html" style="text-decoration:none; color:white;">BEST SELLERS</a>
+        <a href="about.html" style="text-decoration:none; color:white;">ABOUT US</a>
+        <a href="cart.html" style="text-decoration:none; color:white;">CART</a>
+         <a href="list.html" style="text-decoration:none; color:white;">LISTS</a>
+
+       
+        </details>
+
+    </div>
+</div>
+<!-- CATEGORY BAR -->
+<div style="
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    padding:12px 20px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    position:relative;
+    z-index:10;
+    font-weight:600;
+   
+">
+
+    <!-- ================= BAGS ================= -->
+    <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="bags.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            BAGS ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:900px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+            z-index:999;
+        ">
+            <div>
+                <h4>Handcrafted Bags</h4>
+                <a href="#">Hand Bags</a><br><br>
+                <a href="#">Jute Bags</a><br><br>
+                <a href="#">Cotton Bags</a><br><br>
+                <a href="#">Tote Bags</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+    <!-- ================= BASKETS ================= -->
+        <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="basket.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            BASKETS ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:850px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+        ">
+            <div>
+                <h4>Storage & Usage</h4>
+                <a href="#">Laundry Baskets</a><br><br>
+                <a href="#">Storage Baskets</a><br><br>
+                <a href="#">Toy Baskets</a><br><br>
+                <a href="#">Fruit & Vegetable Baskets</a>
+            </div>
+
+           
+        </div>
+    </details>
+
+    <!-- ================= HOME DECOR ================= -->
+       <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="home.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            HOME DECOR ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:950px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+        ">
+            <div>
+                <h4>Decor Items</h4>
+                <a href="#">Wall Hangings</a><br><br>
+                <a href="#">Showpieces</a><br><br>
+                <a href="#">Handmade Frames</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+   
+            <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="kitchen.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            KITCHEN & DINING ▾
+        </a>
+    </summary>
+
+    <div style="
+        position:absolute;
+        top:45px;
+        left:50%;
+        transform:translateX(-50%);
+        width:900px;
+        background:#fff;
+        padding:25px;
+        border-radius:12px;
+        box-shadow:0 15px 40px rgba(0,0,0,0.25);
+        display:flex;
+        gap:40px;
+    ">
+        <div>
+            <h4>Kitchen Essentials</h4>
+            <a href="#">Bowls</a><br><br>
+            <a href="#">Plates</a><br><br>
+            <a href="#">Serving Trays</a><br><br>
+            <a href="#">Eco Kitchen Utensils</a>
+        </div>
+    </div>
+
+   
+
+</div>
+
+<script>
+    // Only open one menu at a time
+    const detailsEls = document.querySelectorAll('details');
+    detailsEls.forEach((el) => {
+        el.addEventListener('click', () => {
+            detailsEls.forEach((d) => {
+                if (d !== el) d.removeAttribute('open');
+            });
+        });
+    });
+</script>
+
+
+    <!-- Overlay Content -->
+ 
+    <center>
+        <h2 style="font-size:76px;margin-bottom:0px; ">Discover the Art of Handicrafts</h2>
+        <p style="max-width:700px; font-size:18px; margin-bottom:0px;">
+            Explore handcrafted treasures made with passion and skill. Every item tells a story of tradition and creativity.
+        </p>
+        </center>
+  
+    </div>
+</div>
+<h2 class="page-title">Handcrafted Baskets</h2>
+
+
+<!-- ================= PRODUCTS ================= -->
+<div class="products">
+
+<!-- 1 -->
+<div class="card">
+<img src="https://tse4.mm.bing.net/th/id/OIP.JUxW_HaXvQxnuZcac6VzUgHaFc?pid=Api&P=0&h=180">
+<h3>Laundry Basket</h3>
+<p class="price">₹1,499</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Laundry Basket',1499,'https://tse4.mm.bing.net/th/id/OIP.JUxW_HaXvQxnuZcac6VzUgHaFc?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Laundry Basket',1499,'https://tse4.mm.bing.net/th/id/OIP.JUxW_HaXvQxnuZcac6VzUgHaFc?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<img src="https://tse1.mm.bing.net/th/id/OIP.T-NSoQU3XEfGh-gaU3YuzgHaFm?pid=Api&P=0&h=180">
+<h3>Storage Basket</h3>
+<p class="price">₹999</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Storage Basket',999,'https://tse1.mm.bing.net/th/id/OIP.T-NSoQU3XEfGh-gaU3YuzgHaFm?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Storage Basket',999,'https://tse1.mm.bing.net/th/id/OIP.T-NSoQU3XEfGh-gaU3YuzgHaFm?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<img src="https://tse2.mm.bing.net/th/id/OIP.kmC6TQPoUWzeeM7Yfz_s_gHaE7?pid=Api&P=0&h=180">
+<h3>Fruit Basket</h3>
+<p class="price">₹799</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Fruit Basket',799,'https://tse2.mm.bing.net/th/id/OIP.kmC6TQPoUWzeeM7Yfz_s_gHaE7?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Fruit Basket',799,'https://tse2.mm.bing.net/th/id/OIP.kmC6TQPoUWzeeM7Yfz_s_gHaE7?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<img src="https://thumbs.dreamstime.com/b/basket-various-fresh-vegetables-wicker-full-rustic-wooden-background-59839600.jpg">
+<h3>Vegetable Basket</h3>
+<p class="price">₹899</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Vegetable Basket',899,'https://thumbs.dreamstime.com/b/basket-various-fresh-vegetables-wicker-full-rustic-wooden-background-59839600.jpg')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Vegetable Basket',899,'https://thumbs.dreamstime.com/b/basket-various-fresh-vegetables-wicker-full-rustic-wooden-background-59839600.jpg')">❤</button>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/9f9b3d25-ae81-4b30-b053-d62065575e84.__CR0,305,1601,990_PT0_SX970_V1___.jpg">
+<h3>Toy Basket</h3>
+<p class="price">₹1,199</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Toy Basket',1199,'https://m.media-amazon.com/images/S/aplus-media-library-service-media/9f9b3d25-ae81-4b30-b053-d62065575e84.__CR0,305,1601,990_PT0_SX970_V1___.jpg')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Toy Basket',1199,'https://m.media-amazon.com/images/S/aplus-media-library-service-media/9f9b3d25-ae81-4b30-b053-d62065575e84.__CR0,305,1601,990_PT0_SX970_V1___.jpg')">❤</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<img src="https://tse3.mm.bing.net/th/id/OIP.F0_UvAbwtrPeaYa_7J7mdAHaEK?pid=Api&P=0&h=180">
+<h3>Picnic Basket</h3>
+<p class="price">₹2,199</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Picnic Basket',2199,'https://tse3.mm.bing.net/th/id/OIP.F0_UvAbwtrPeaYa_7J7mdAHaEK?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Picnic Basket',2199,'https://tse3.mm.bing.net/th/id/OIP.F0_UvAbwtrPeaYa_7J7mdAHaEK?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<img src="https://tse4.mm.bing.net/th/id/OIP.I0ygCaWMK6P4MQjnU504sAHaEo?pid=Api&P=0&h=180">
+<h3>Bread Basket</h3>
+<p class="price">₹649</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Bread Basket',649,'https://tse4.mm.bing.net/th/id/OIP.I0ygCaWMK6P4MQjnU504sAHaEo?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Bread Basket',649,'https://tse4.mm.bing.net/th/id/OIP.I0ygCaWMK6P4MQjnU504sAHaEo?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="https://tse2.mm.bing.net/th/id/OIP.dCqVrYI3L81BKXM3Ea1c5gHaGL?pid=Api&P=0&h=180">
+<h3>Planter Basket</h3>
+<p class="price">₹1,299</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Planter Basket',1299,'https://tse2.mm.bing.net/th/id/OIP.dCqVrYI3L81BKXM3Ea1c5gHaGL?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Planter Basket',1299,'https://tse2.mm.bing.net/th/id/OIP.dCqVrYI3L81BKXM3Ea1c5gHaGL?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<img src="https://tse4.mm.bing.net/th/id/OIP.bqytnZNVeA2gy7y6kFywvQHaE7?pid=Api&P=0&h=180">
+<h3>Gift Basket</h3>
+<p class="price">₹1,899</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Gift Basket',1899,'https://tse4.mm.bing.net/th/id/OIP.bqytnZNVeA2gy7y6kFywvQHaE7?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Gift Basket',1899,'https://tse4.mm.bing.net/th/id/OIP.bqytnZNVeA2gy7y6kFywvQHaE7?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<img src="https://tse3.mm.bing.net/th/id/OIP.Uw_PvGPMEm6cwmzegjt0aQHaE8?pid=Api&P=0&h=180">
+<h3>Laundry Hamper</h3>
+<p class="price">₹2,299</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+<button class="cart-btn" onclick="addToCart('Laundry Hamper',2299,'https://tse3.mm.bing.net/th/id/OIP.Uw_PvGPMEm6cwmzegjt0aQHaE8?pid=Api&P=0&h=180')">Add to Cart</button>
+<button class="wish-btn" onclick="addToWishlist('Laundry Hamper',2299,'https://tse3.mm.bing.net/th/id/OIP.Uw_PvGPMEm6cwmzegjt0aQHaE8?pid=Api&P=0&h=180')">❤</button>
+</div>
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+<div class="footer-container">
+<div class="footer-col">
+<h3>CraftRoot</h3>
+<p>CraftRoot brings you authentic handcrafted products created by skilled artisans.</p>
+</div>
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Shop</a></li>
+<li><a href="#">Blogs</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Contact Us</h3>
+<p>📍 Vellore, Tamil Nadu</p>
+<p>📞 +91 98765 43210</p>
+<p>✉ support@craftroot.com</p>
+</div>
+</div>
+<div class="footer-bottom">© 2025 CraftRoot</div>
+</footer>
+
+<script>
+function addToCart(name, price, imageText){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price, qty:1, image:imageText });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.location.href="cart.html";
+}
+
+function addToWishlist(name, price, imageText){
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    wishlist.push({ name, price, image:imageText });
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    window.location.href="list.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bags | CraftRoot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Galada&family=Gafata&family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+/* ================= HEADER (EXACT SAME AS INDEX) ================= */
+.banner1 {
+            background-color: #5b0101;
+            padding: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #shopname {
+            font-family: 'Galada', cursive;
+            font-size: 26px;
+            margin: 0;
+            white-space: nowrap;
+        }
+             .search-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 360px;
+            height: 32px;
+            border-radius: 20px;
+            border: none;
+            padding: 0 15px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+            font-style: italic;
+        }
+
+
+        .option ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 14px;
+        }
+
+        .option ul li a {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .option ul li a:hover {
+            color: #ffcccb;
+        }
+
+        @media (max-width: 993px) {
+            .banner1 {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .option ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+
+/* ================= PRODUCTS ================= */
+body{
+    margin:0;
+    font-family:'Gafata',sans-serif;
+    background:#f4efe9;
+}
+
+.page-title{
+    text-align:center;
+    margin:40px 0;
+    color:#5b0101;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    padding:0 40px 60px;
+}
+
+.card{
+    background:#fff;
+    border-radius:14px;
+    padding:15px;
+    box-shadow:0 6px 16px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.price{
+    color:#c59d5f;
+    font-weight:bold;
+}
+
+.rating{
+    color:gold;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.actions button{
+    flex:1;
+    padding:8px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    color:#fff;
+    font-size:13px;
+}
+
+.cart-btn{background:#5b0101;}
+.wish-btn{background:#b03a2e;}
+
+@media(max-width:900px){
+    .products{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+    .products{grid-template-columns:1fr;}
+}
+
+/* ================= FOOTER (EXACT SAME AS INDEX) ================= */
+footer{
+    background:#5b0101;
+    color:#eee;
+    padding:60px 40px 20px;
+    font-family:Poppins, sans-serif;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.footer-col h3{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+.footer-col p, .footer-col ul li a{
+    font-size:14px;
+    color:#ccc;
+    text-decoration:none;
+}
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid #333;
+    margin-top:40px;
+    padding-top:20px;
+    font-size:13px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="banner1">
+    <!-- LOGO -->
+    <h1 id="shopname">CraftRoot</h1>
+
+    <!-- CENTER SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Search handcrafted treasures…">
+    </div>
+
+    <!-- RIGHT MENU -->
+    <div style="display:flex; align-items:center; gap:15px;">
+        <a href="index.html" style="text-decoration:none; color:white;">HOME</a>
+        <a href="bestseller.html" style="text-decoration:none; color:white;">BEST SELLERS</a>
+        <a href="about.html" style="text-decoration:none; color:white;">ABOUT US</a>
+        <a href="cart.html" style="text-decoration:none; color:white;">CART</a>
+         <a href="list.html" style="text-decoration:none; color:white;">LISTS</a>
+
+       
+        </details>
+
+    </div>
+</div>
+
+<!-- ================= HANDICRAFT VIDEO SECTION ================= -->
+
+
+<!-- CATEGORY BAR -->
+<!-- CATEGORY BAR -->
+<!-- CATEGORY BAR -->
+<div style="
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    padding:12px 20px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    position:relative;
+    z-index:10;
+    font-weight:600;
+   
+">
+
+    <!-- ================= BAGS ================= -->
+    <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="bags.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            BAGS ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:900px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+            z-index:999;
+        ">
+            <div>
+                <h4>Handcrafted Bags</h4>
+                <a href="#">Hand Bags</a><br><br>
+                <a href="#">Jute Bags</a><br><br>
+                <a href="#">Cotton Bags</a><br><br>
+                <a href="#">Tote Bags</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+    <!-- ================= BASKETS ================= -->
+    <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="basket.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            BASKETS ▾
+        </a>
+    </summary>
+
+    <div style="
+        position:absolute;
+        top:45px;
+        left:50%;
+        transform:translateX(-50%);
+        width:850px;
+        background:#fff;
+        padding:25px;
+        border-radius:12px;
+        box-shadow:0 15px 40px rgba(0,0,0,0.25);
+        display:flex;
+        gap:40px;
+    ">
+        <div>
+            <h4>Storage & Usage</h4>
+
+            <a href="#" style="text-decoration:none; color:#000;">Laundry Baskets</a><br><br>
+            <a href="#" style="text-decoration:none; color:#000;">Storage Baskets</a><br><br>
+            <a href="#" style="text-decoration:none; color:#000;">Toy Baskets</a><br><br>
+            <a href="#" style="text-decoration:none; color:#000;">Fruit & Vegetable Baskets</a>
+        </div>
+    </div>
+</details>
+
+
+    <!-- ================= HOME DECOR ================= -->
+       <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="home.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            HOME DECOR ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:950px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+        ">
+            <div>
+                <h4>Decor Items</h4>
+                <a href="#">Wall Hangings</a><br><br>
+                <a href="#">Showpieces</a><br><br>
+                <a href="#">Handmade Frames</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+    <!-- ================= KITCHEN ================= -->
+       <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="kitchen.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            KITCHEN & DINING ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:900px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+        ">
+            <div>
+                <h4>Kitchen Essentials</h4>
+                <a href="#">Bowls</a><br><br>
+                <a href="#">Plates</a><br><br>
+                <a href="#">Serving Trays</a><br><br>
+                <a href="#">Eco Kitchen Utensils</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+</div>
+
+<script>
+    // Only open one menu at a time
+    const detailsEls = document.querySelectorAll('details');
+    detailsEls.forEach((el) => {
+        el.addEventListener('click', () => {
+            detailsEls.forEach((d) => {
+                if (d !== el) d.removeAttribute('open');
+            });
+        });
+    });
+</script>
+
+
+    <!-- Overlay Content -->
+ 
+    <center>
+        <h2 style="font-size:76px;margin-bottom:0px; ">Discover the Art of Handicrafts</h2>
+        <p style="max-width:700px; font-size:18px; margin-bottom:0px;">
+            Explore handcrafted treasures made with passion and skill. Every item tells a story of tradition and creativity.
+        </p>
+        </center>
+  
+    </div>
+</div>
+<h2 class="page-title">Handcrafted Bags</h2>
+<!-- ================= PRODUCTS ================= -->
+<div class="products">
+
+<!-- 1 -->
+<div class="card">
+<img src="https://tse2.mm.bing.net/th?id=OIF.sb%2fUmQxtZBCA5MRXEnSaTA&pid=Api&P=0&h=180">
+<h3>Jute Hand Bag</h3>
+<p class="price">₹1,299</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Jute Hand Bag',1299,'https://tse2.mm.bing.net/th?id=OIF.sb%2fUmQxtZBCA5MRXEnSaTA&pid=Api&P=0&h=180')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+    onclick="addToWishlist(
+        'Jute Hand Bag',
+        1299,
+        'https://tse2.mm.bing.net/th?id=OIF.sb%2fUmQxtZBCA5MRXEnSaTA&pid=Api&P=0&h=180'
+    )">
+    ❤
+</button>
+
+</div>
+
+</div>
+
+<!-- 2 -->
+<div class="card">
+<img src="https://www.alibabaprinting.sg/wp-content/uploads/flexible-tote-designs-1024x585.jpg">
+<h3>Cotton Tote</h3>
+<p class="price">₹999</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Cotton Tote Bag',999,'https://www.alibabaprinting.sg/wp-content/uploads/flexible-tote-designs-1024x585.jpg')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Cotton Tote Bag',999,'https://www.alibabaprinting.sg/wp-content/uploads/flexible-tote-designs-1024x585.jpg')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 3 -->
+<div class="card">
+<img src="https://tse4.mm.bing.net/th/id/OIP.RjfpmDtxPvd2LYrP8T3qBQHaE8?pid=Api&P=0&h=180">
+<h3>Sling Bag</h3>
+<p class="price">₹1,499</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Sling Bag',1499,'https://tse4.mm.bing.net/th/id/OIP.RjfpmDtxPvd2LYrP8T3qBQHaE8?pid=Api&P=0&h=180')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Sling Bag',1499,'https://tse4.mm.bing.net/th/id/OIP.RjfpmDtxPvd2LYrP8T3qBQHaE8?pid=Api&P=0&h=180')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 4 -->
+<div class="card">
+<img src="https://m.media-amazon.com/images/I/81J3LHj32CL._SL1500_.jpg">
+<h3>Leather Bag</h3>
+<p class="price">₹2,199</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Leather Bag',2199,'https://m.media-amazon.com/images/I/81J3LHj32CL._SL1500_.jpg')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Leather Bag',2199,'https://m.media-amazon.com/images/I/81J3LHj32CL._SL1500_.jpg')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 5 -->
+<div class="card">
+<img src="https://redagapeblog.com/wp-content/uploads/2023/08/Crochet-Tote-Bag-Patterns-1-1024x555.jpg">
+<h3>Canvas Bag</h3>
+<p class="price">₹1,199</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Canvas Bag',1199,'https://redagapeblog.com/wp-content/uploads/2023/08/Crochet-Tote-Bag-Patterns-1-1024x555.jpg')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Canvas Bag',1199,'https://redagapeblog.com/wp-content/uploads/2023/08/Crochet-Tote-Bag-Patterns-1-1024x555.jpg')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 6 -->
+<div class="card">
+<img src="https://zouk.co.in/cdn/shop/files/Bristel_Women_s_Office_Bag.jpg?v=1719906559&width=1400">
+<h3>Office Tote</h3>
+<p class="price">₹1,699</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Office Tote Bag',1699,'https://zouk.co.in/cdn/shop/files/Bristel_Women_s_Office_Bag.jpg?v=1719906559&width=1400')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Office Tote Bag',1699,'https://zouk.co.in/cdn/shop/files/Bristel_Women_s_Office_Bag.jpg?v=1719906559&width=1400')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 7 -->
+<div class="card">
+<img src="https://cdn.notonthehighstreet.com/fs/dd/59/dd98-2bba-42a0-8f46-8b403aa89784/original_leather-holdall-travel-bag-over-35-off.jpg">
+<h3>Travel Bag</h3>
+<p class="price">₹2,499</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Travel Bag',2499,'https://cdn.notonthehighstreet.com/fs/dd/59/dd98-2bba-42a0-8f46-8b403aa89784/original_leather-holdall-travel-bag-over-35-off.jpg')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Travel Bag',2499,'https://cdn.notonthehighstreet.com/fs/dd/59/dd98-2bba-42a0-8f46-8b403aa89784/original_leather-holdall-travel-bag-over-35-off.jpg')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="https://tse2.mm.bing.net/th/id/OIP.wancAtrV82BuScCE6I6XVQHaE8?pid=Api&P=0&h=180">
+<h3>Handloom Bag</h3>
+<p class="price">₹1,899</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Handloom Bag',1899,'https://tse2.mm.bing.net/th/id/OIP.wancAtrV82BuScCE6I6XVQHaE8?pid=Api&P=0&h=180')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Handloom Bag',1899,'https://tse2.mm.bing.net/th/id/OIP.wancAtrV82BuScCE6I6XVQHaE8?pid=Api&P=0&h=180')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 9 -->
+<div class="card">
+<img src="https://tse3.mm.bing.net/th/id/OIP.kiV_BvVKbUcK3po81Xa5QAAAAA?pid=Api&P=0&h=180">
+<h3>Ethnic Bag</h3>
+<p class="price">₹1,599</p>
+<p class="rating">★★★★★</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Ethnic Bag',1599,'https://tse3.mm.bing.net/th/id/OIP.kiV_BvVKbUcK3po81Xa5QAAAAA?pid=Api&P=0&h=180')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Ethnic Bag',1599,'https://tse3.mm.bing.net/th/id/OIP.kiV_BvVKbUcK3po81Xa5QAAAAA?pid=Api&P=0&h=180')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+<!-- 10 -->
+<div class="card">
+<img src="https://vivcrochets.com/wp-content/uploads/2024/04/IMG_5480-edited-scaled.jpg">
+<h3>Mini Pouch</h3>
+<p class="price">₹699</p>
+<p class="rating">★★★★☆</p>
+<div class="actions">
+    <button class="cart-btn"
+        onclick="addToCart('Mini Pouch',699,'https://vivcrochets.com/wp-content/uploads/2024/04/IMG_5480-edited-scaled.jpg')">
+        Add to Cart
+    </button>
+    <button class="wish-btn"
+        onclick="addToWishlist('Mini Pouch',699,'https://vivcrochets.com/wp-content/uploads/2024/04/IMG_5480-edited-scaled.jpg')">
+        ❤
+    </button>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+<div class="footer-container">
+<div class="footer-col">
+<h3>CraftRoot</h3>
+<p>CraftRoot brings you authentic handcrafted products created by skilled artisans.</p>
+</div>
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Shop</a></li>
+<li><a href="#">Blogs</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Contact Us</h3>
+<p>📍 Vellore, Tamil Nadu</p>
+<p>📞 +91 98765 43210</p>
+<p>✉ support@craftroot.com</p>
+</div>
+</div>
+<div class="footer-bottom">© 2025 CraftRoot</div>
+</footer>
+
+<script>
+function cart(){ alert("Added to cart"); }
+function wish(){ alert("Added to wishlist"); }
+function addToWishlist(name, price, image){
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    wishlist.push({ name, price, image });
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
+
+function addToCart(name, price, image){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let found = cart.find(item => item.name === name);
+    if(found){
+        found.qty += 1;
+    } else {
+        cart.push({ name, price, image, qty:1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+</script>
+<script>
+function addToCart(name, price, imageText){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+        name: name,
+        price: price,
+        qty: 1,
+        image: imageText
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.location.href = "cart.html";
+}
+
+function addToWishlist(name, price, imageText){
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    wishlist.push({
+        name: name,
+        price: price,
+        image: imageText
+    });
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    window.location.href = "list.html";
+}
+</script>
+
+</body>
+</html>

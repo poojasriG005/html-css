@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Best Sellers | CraftRoot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Gafata&family=Galada&family=Style+Script&display=swap" rel="stylesheet">
+
+<style>
+/* ===== YOUR ORIGINAL CSS (UNCHANGED) ===== */
+body{
+    font-family:'Gafata',sans-serif;
+    margin:0;background:#f4efe9;
+    color:#333;
+}
+a{text-decoration:none;color:inherit;}
+.banner1{
+    background:#5b0101;padding:20px;display:flex;
+    align-items:center;justify-content:space-between;
+    color:#fff;position:sticky;top:0;z-index:1000;
+}
+#shopname{font-family:'Galada';font-size:26px;margin:0;}
+.search-box{flex:1;display:flex;justify-content:center;}
+.search-box input{
+    max-width:360px;width:100%;height:32px;
+    border-radius:20px;border:none;padding:0 15px;
+}
+.artisan-section{padding:50px 20px;max-width:1200px;margin:auto;}
+.artisan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
+.artisan-card{
+    background:#fff;border-radius:18px;overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    transition:.35s;cursor:pointer;
+}
+.artisan-card:hover{transform:translateY(-10px);}
+.artisan-card img{width:100%;height:280px;object-fit:cover;}
+.artisan-content{padding:22px;}
+.artisan-content h3{color:#5b0101;margin:0;}
+.artisan-content h4{color:#777;margin:6px 0 12px;font-size:14px;}
+.artisan-content p{font-size:14px;line-height:1.7;}
+.popup-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.5);
+    backdrop-filter:blur(6px);display:none;
+    align-items:center;justify-content:center;z-index:999;
+}
+.popup{
+    background:#fff;width:90%;max-width:850px;
+    border-radius:24px;display:grid;
+    grid-template-columns:1fr 1fr;overflow:hidden;
+}
+.popup img{width:100%;height:100%;object-fit:cover;}
+.popup-content{padding:30px;}
+.popup-content h2{color:#5b0101;margin:0;}
+.price{font-size:22px;color:#5b0101;margin:15px 0;}
+.wishlist{font-size:26px;cursor:pointer;}
+.qty-box{display:flex;gap:12px;margin:15px 0;}
+.qty-btn{padding:6px 14px;font-size:18px;}
+.add-btn{
+    background:#5b0101;color:#fff;
+    padding:12px 28px;border:none;border-radius:30px;
+}
+footer{background:#5b0101;color:#eee;padding:60px 40px 20px;}
+.footer-container{
+    max-width:1200px;margin:auto;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+.footer-bottom{text-align:center;border-top:1px solid #333;margin-top:40px;padding-top:20px;font-size:13px;}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="banner1">
+        <h1 id="shopname">CraftRoot</h1>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search handcrafted treasures…">
+        </div>
+
+        <div style="display:flex; align-items:center; gap:15px;">
+            <a href="index.html">HOME</a>
+            <a href="bestseller.html">BEST SELLERS</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="cart.html">CART</a>
+            <a href="list.html">LISTS</a>
+        </div>
+    </div>
+<div class="page-title"> 
+    <center>
+         <h1 style="margin-top:70px;">Our Best Sellers</h1>
+
+         <p> Meet the artisans behind our most loved creations. Each piece carries a story of skill, tradition, and passion. </p> 
+        </center> 
+    </div>
+<!-- ARTISANS -->
+<section class="artisan-section">
+
+    <div class="artisan-grid">
+
+        <div class="artisan-card" onclick="openPopup(0)">
+            <img src="images/brass1.webp">
+            <div class="artisan-content">
+                <h3>Handcrafted Brass Oil Bottle</h3>
+                <h4>₹1,299</h4>
+                <p>Traditional temple-style brass oil bottle made by skilled artisans.</p>
+                <p>⭐⭐⭐⭐☆ (4.5)</p>
+            </div>
+        </div>
+
+        <div class="artisan-card" onclick="openPopup(1)">
+            <img src="images/brass3.webp">
+            <div class="artisan-content">
+                <h3>Terracotta Folk Figurine</h3>
+                <h4>₹999</h4>
+                <p>Hand-shaped terracotta art inspired by Bengali folklore.</p>
+                <p>⭐⭐⭐⭐⭐ (5.0)</p>
+            </div>
+        </div>
+
+        <div class="artisan-card" onclick="openPopup(2)">
+            <img src="https://media.istockphoto.com/id/482927596/photo/elephant.webp?a=1&b=1&s=612x612&w=0&k=20&c=-kC2nVCEHc0VvruCNtsa6G4jfmVY1DiDOcJFGifqm2k=">
+            <div class="artisan-content">
+                <h3>Wooden Home Décor Piece</h3>
+                <h4>₹1,499</h4>
+                <p>Sustainable wooden décor with hand-carved detailing.</p>
+                <p>⭐⭐⭐⭐☆ (4.6)</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="overlay" onclick="closePopup(event)">
+    <div class="popup">
+
+        <!-- PERSON IMAGE -->
+        <img id="popupPersonImg">
+
+        <div class="popup-content">
+            <h2 id="popupPersonName"></h2>
+            <p id="popupPersonDetails"></p>
+
+            <hr>
+
+            <strong id="popupProduct"></strong>
+            <div class="price" id="popupPrice"></div>
+
+            <div class="wishlist" onclick="toggleWish(event)">🤍</div>
+
+            <div class="qty-box">
+                <button class="qty-btn" onclick="changeQty(-1,event)">−</button>
+                <span id="qty">1</span>
+                <button class="qty-btn" onclick="changeQty(1,event)">+</button>
+            </div>
+
+            <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+<style>
+    footer{
+        background:#5b0101;
+        color:#eee;
+        padding:60px 40px 20px;
+        font-family:Poppins, sans-serif;
+        margin-top:50px;
+    }
+
+    .footer-container{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:40px;
+        max-width:1200px;
+        margin:auto;
+    }
+
+    .footer-col h3{
+        font-family:'Playfair Display', serif;
+        font-size:22px;
+        margin-bottom:18px;
+        color:#fff;
+    }
+
+    .footer-col p{
+        font-size:14px;
+        line-height:1.7;
+        color:#ccc;
+    }
+
+    .footer-col ul{
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+
+    .footer-col ul li{
+        margin-bottom:10px;
+    }
+
+    .footer-col ul li a{
+        text-decoration:none;
+        color:#ccc;
+        font-size:14px;
+        transition:color 0.3s ease;
+    }
+
+    .footer-col ul li a:hover{
+        color:#fff;
+    }
+
+    .contact-info p{
+        margin-bottom:10px;
+        font-size:14px;
+    }
+
+    .contact-info span{
+        color:#fff;
+        font-weight:600;
+    }
+
+    .social-icons{
+        display:flex;
+        gap:15px;
+        margin-top:15px;
+    }
+
+    .social-icons a{
+        width:36px;
+        height:36px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background:#333;
+        color:#fff;
+        text-decoration:none;
+        font-size:16px;
+        transition:background 0.3s ease;
+    }
+
+    .social-icons a:hover{
+        background:#555;
+    }
+
+    .footer-bottom{
+        text-align:center;
+        border-top:1px solid #333;
+        margin-top:40px;
+        padding-top:20px;
+        font-size:13px;
+        color:#aaa;
+    }
+
+    @media(max-width:600px){
+        footer{
+            text-align:center;
+        }
+        .social-icons{
+            justify-content:center;
+        }
+    }
+</style>
+
+<footer>
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h3>CraftRoot</h3>
+            <p>
+                CraftRoot brings you authentic handcrafted products created by skilled artisans.
+                Every piece reflects tradition, culture, and timeless artistry.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Materials</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col contact-info">
+            <h3>Contact Us</h3>
+            <p><span>📍 Address:</span> Vellore, Tamil Nadu, India</p>
+            <p><span>📞 Phone:</span> +91 98765 43210</p>
+            <p><span>✉ Email:</span> support@craftroot.com</p>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-col">
+            <h3>Follow Us</h3>
+            <p>Stay connected for new collections & stories.</p>
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">i</a>
+                <a href="#">t</a>
+                <a href="#">y</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 CraftRoot. All Rights Reserved.
+    </div>
+</footer>
+
+
+</body>
+</html>
+
+<script>
+let qty = 1;
+function addToCart(){
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const item = {
+        product: popupProduct.innerText,
+        price: popupPrice.innerText,
+        qty: qty,
+        artisan: popupPersonName.innerText,
+        img: popupPersonImg.src
+    };
+
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Product added to cart!");
+    overlay.style.display = "none";
+}
+const data = [
+{
+    product: "Handcrafted Brass Oil Bottle",
+    price: "₹1,299",
+    personImg: "images/persom 1.avif",
+    personName: "Ravi Kumar",
+    personDetails: "Master brass artisan from Tamil Nadu with 20+ years of experience crafting temple-inspired metalwork."
+},
+{
+    product: "Terracotta Folk Figurine",
+    price: "₹999",
+    personImg: "images/person 2.avif",
+    personName: "Meenakshi Devi",
+    personDetails: "Terracotta artist from West Bengal specializing in traditional folk-inspired figurines."
+},
+{
+    product: "Wooden Home Décor Piece",
+    price: "₹1,499",
+    personImg: "images/person 3.jpg",
+    personName: "Suresh Patel",
+    personDetails: "Woodcraft specialist from Gujarat focused on sustainable, hand-carved wooden décor."
+}
+];
+
+function openPopup(i){
+    qty = 1;
+    document.getElementById("qty").innerText = 1;
+
+    popupPersonImg.src = data[i].personImg;
+    popupPersonName.innerText = data[i].personName;
+    popupPersonDetails.innerText = data[i].personDetails;
+    popupProduct.innerText = data[i].product;
+    popupPrice.innerText = data[i].price;
+
+    overlay.style.display = "flex";
+}
+
+function closePopup(e){
+    if(e.target.id === "overlay") overlay.style.display = "none";
+}
+
+function toggleWish(e){
+    e.stopPropagation();
+    e.target.textContent = e.target.textContent === "🤍" ? "❤️" : "🤍";
+}
+
+function changeQty(v, e){
+    e.stopPropagation();
+    qty = Math.max(1, qty + v);
+    document.getElementById("qty").innerText = qty;
+}
+
+document.addEventListener("keydown", e => {
+    if(e.key === "Escape") overlay.style.display = "none";
+});
+</script>
+
+
+</body>
+</html>

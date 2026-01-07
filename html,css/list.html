@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftRoot Wish List</title>
+    <link rel="icon" href="./images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Gafata&family=Galada&family=Style+Script&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Gafata', sans-serif;
+            background-color: #f4efe9;
+;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+       .banner1 {
+            background-color: #5b0101;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #shopname {
+            font-family: 'Galada', cursive;
+            font-size: 26px;
+            margin: 0;
+        }
+
+        .search-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 360px;
+            height: 32px;
+            border-radius: 20px;
+            border: none;
+            padding: 0 15px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+            font-style: italic;
+        }
+
+        .option ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 14px;
+        }
+
+        .option ul li a {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .option ul li a:hover {
+            color: #ffcccb;
+        }
+        .unlist-btn{
+    margin-top:15px;
+    padding:8px 14px;
+    border:none;
+    border-radius:20px;
+    background:#5b0101;
+    color:#fff;
+    font-size:13px;
+    cursor:pointer;
+    transition:background 0.3s ease, transform 0.2s ease;
+}
+
+.unlist-btn:hover{
+    background:#7a0202;
+    transform:scale(1.05);
+}
+
+
+        @media (max-width: 993px) {
+            .banner1 {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        /* ================= WISHLIST GRID ================= */
+        .wishlist-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .wishlist-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        font-family: 'Gafata', sans-serif;
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin: 0 0 10px 0;
+            color: #5b0101;
+            font-size: 20px;
+        }
+
+        .product-info p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .rating {
+            color: #f2b01e;
+            font-weight: 600;
+        }
+
+        @media(max-width:600px){
+            .wishlist-title{
+                font-size:28px;
+            }
+        }
+
+        /* ================= FOOTER ================= */
+        footer{
+            background:#5b0101;
+            color:#eee;
+            padding:60px 40px 20px;
+            font-family:Poppins, sans-serif;
+            margin-top:50px;
+        }
+
+        .footer-container{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap:40px;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        .footer-col h3{
+            font-family:'Playfair Display', serif;
+            font-size:22px;
+            margin-bottom:18px;
+            color:#fff;
+        }
+
+        .footer-col p{
+            font-size:14px;
+            line-height:1.7;
+            color:#ccc;
+        }
+
+        .footer-col ul{
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+
+        .footer-col ul li{
+            margin-bottom:10px;
+        }
+
+        .footer-col ul li a{
+            text-decoration:none;
+            color:#ccc;
+            font-size:14px;
+            transition:color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover{
+            color:#fff;
+        }
+
+        .contact-info p{
+            margin-bottom:10px;
+            font-size:14px;
+        }
+
+        .contact-info span{
+            color:#fff;
+            font-weight:600;
+        }
+
+        .social-icons{
+            display:flex;
+            gap:15px;
+            margin-top:15px;
+        }
+
+        .social-icons a{
+            width:36px;
+            height:36px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:50%;
+            background:#333;
+            color:#fff;
+            text-decoration:none;
+            font-size:16px;
+            transition:background 0.3s ease;
+        }
+
+        .social-icons a:hover{
+            background:#555;
+        }
+
+        .footer-bottom{
+            text-align:center;
+            border-top:1px solid #333;
+            margin-top:40px;
+            padding-top:20px;
+            font-size:13px;
+            color:#aaa;
+        }
+
+        @media(max-width:600px){
+            footer{
+                text-align:center;
+            }
+            .social-icons{
+                justify-content:center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+   <div class="banner1">
+        <h1 id="shopname">CraftRoot</h1>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search handcrafted treasures…">
+        </div>
+
+        <div style="display:flex; align-items:center; gap:15px;">
+            <a href="index.html">HOME</a>
+            <a href="bestseller.html">BEST SELLERS</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="cart.html">CART</a>
+            <a href="list.html">LISTS</a>
+        </div>
+    </div>
+<!-- CATEGORY BAR -->
+<div style="
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    padding:12px 20px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    position:relative;
+    z-index:10;
+    font-weight:600;
+   
+">
+
+    <!-- ================= BAGS ================= -->
+    <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="bags.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            BAGS ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:900px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+            z-index:999;
+        ">
+            <div>
+                <h4>Handcrafted Bags</h4>
+                <a href="#">Hand Bags</a><br><br>
+                <a href="#">Jute Bags</a><br><br>
+                <a href="#">Cotton Bags</a><br><br>
+                <a href="#">Tote Bags</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+    <!-- ================= BASKETS ================= -->
+    <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="basket.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            BASKETS ▾
+        </a>
+    </summary>
+
+    <div style="
+        position:absolute;
+        top:45px;
+        left:50%;
+        transform:translateX(-50%);
+        width:850px;
+        background:#fff;
+        padding:25px;
+        border-radius:12px;
+        box-shadow:0 15px 40px rgba(0,0,0,0.25);
+        display:flex;
+        gap:40px;
+    ">
+        <div>
+            <h4>Storage & Usage</h4>
+
+            <a href="#" style="text-decoration:none; color:#000;">Laundry Baskets</a><br><br>
+            <a href="#" style="text-decoration:none; color:#000;">Storage Baskets</a><br><br>
+            <a href="#" style="text-decoration:none; color:#000;">Toy Baskets</a><br><br>
+            <a href="#" style="text-decoration:none; color:#000;">Fruit & Vegetable Baskets</a>
+        </div>
+    </div>
+</details>
+
+
+    <!-- ================= HOME DECOR ================= -->
+       <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="home.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            HOME DECOR ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:950px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+        ">
+            <div>
+                <h4>Decor Items</h4>
+                <a href="#">Wall Hangings</a><br><br>
+                <a href="#">Showpieces</a><br><br>
+                <a href="#">Handmade Frames</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+    <!-- ================= KITCHEN ================= -->
+       <details style="position:relative;">
+    <summary style="cursor:pointer; list-style:none;">
+        <a href="kitchen.html"
+           style="text-decoration:none; color:inherit; font-weight:600;">
+            KITCHEN & DINING ▾
+        </a>
+    </summary>
+        <div style="
+            position:absolute;
+            top:45px;
+            left:50%;
+            transform:translateX(-50%);
+            width:900px;
+            background:#fff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.25);
+            display:flex;
+            gap:40px;
+        ">
+            <div>
+                <h4>Kitchen Essentials</h4>
+                <a href="#">Bowls</a><br><br>
+                <a href="#">Plates</a><br><br>
+                <a href="#">Serving Trays</a><br><br>
+                <a href="#">Eco Kitchen Utensils</a>
+            </div>
+
+            
+        </div>
+    </details>
+
+</div>
+
+<script>
+    // Only open one menu at a time
+    const detailsEls = document.querySelectorAll('details');
+    detailsEls.forEach((el) => {
+        el.addEventListener('click', () => {
+            detailsEls.forEach((d) => {
+                if (d !== el) d.removeAttribute('open');
+            });
+        });
+    });
+</script>
+
+
+    <!-- ================= WISHLIST SECTION ================= -->
+    <section class="wishlist-section">
+        <h2 class="wishlist-title">My Wish List</h2>
+        <div class="wishlist-grid" id="wishlistGrid"></div>
+
+
+           
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+
+            <!-- About -->
+            <div class="footer-col">
+                <h3>CraftRoot</h3>
+                <p>
+                    CraftRoot brings you authentic handcrafted products created by skilled artisans.
+                    Every piece reflects tradition, culture, and timeless artistry.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Materials</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col contact-info">
+                <h3>Contact Us</h3>
+                <p><span>📍 Address:</span> Vellore, Tamil Nadu, India</p>
+                <p><span>📞 Phone:</span> +91 98765 43210</p>
+                <p><span>✉ Email:</span> support@craftroot.com</p>
+            </div>
+
+            <!-- Social -->
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <p>Stay connected for new collections & stories.</p>
+                <div class="social-icons">
+                    <a href="#">f</a>
+                    <a href="#">i</a>
+                    <a href="#">t</a>
+                    <a href="#">y</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 CraftRoot. All Rights Reserved.
+        </div>
+        <script>
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+const grid = document.getElementById("wishlistGrid");
+
+function renderWishlist(){
+    if(wishlist.length === 0){
+        grid.innerHTML = "<p style='text-align:center;font-size:18px;'>Your wishlist is empty 🤍</p>";
+        return;
+    }
+
+    grid.innerHTML = wishlist.map((item,index) => `
+    <div class="product-card">
+        <img src="${item.image}">
+
+        <div class="product-info">
+            <h3>${item.name}</h3>
+            <p class="price">₹${item.price}</p>
+            <p class="rating">★★★★☆</p>
+            <p>Handcrafted premium product added to your wishlist.</p>
+
+            <button class="unlist-btn" onclick="removeFromWishlist(${index})">
+                ❌ UNLIST
+            </button>
+        </div>
+    </div>
+    `).join("");
+}
+
+function removeFromWishlist(index){
+    wishlist.splice(index,1);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    renderWishlist();
+}
+
+renderWishlist();
+</script>
+
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | CraftRoot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Gafata&family=Galada&family=Style+Script&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Gafata',sans-serif;
+    margin:0;
+    background:#f4efe9;
+;
+}
+
+/* ================= HEADER (SAME AS CART) ================= */
+.banner1 {
+            background-color: #5b0101;
+            padding: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #shopname {
+            font-family: 'Galada', cursive;
+            font-size: 26px;
+            margin: 0;
+            white-space: nowrap;
+        }
+             .search-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: left 25px;px;
+            
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 360px;
+            height: 32px;
+            border-radius: 20px;
+            border: none;
+            padding: 0 15px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+            font-style: italic;
+        }
+
+
+        .option ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 14px;
+        }
+
+        .option ul li a {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .option ul li a:hover {
+            color: #ffcccb;
+        }
+
+        @media (max-width: 993px) {
+            .banner1 {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .option ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+
+
+/* ================= CHECKOUT ================= */
+.checkout-section{
+    max-width:1000px;
+    margin:50px auto;
+    background:#fff;
+    padding:40px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+.checkout-section h2{
+    margin-top:0;
+    color:#5b0101;
+    text-align:center;
+}
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr; /* only one input per line */
+    gap:20px;
+}
+
+.form-grid input, textarea, select{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    width:100%;
+}
+textarea{grid-column:span 1}
+
+.place-order{
+    margin-top:30px;
+    width:100%;
+    padding:14px;
+    background:#5b0101;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+.place-order:hover{
+    background:#760101;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="banner1">
+    <!-- LOGO -->
+    <h1 id="shopname">CraftRoot</h1>
+
+    <!-- CENTER SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Search handcrafted treasures…">
+    </div>
+
+    <!-- RIGHT MENU -->
+    <div style="display:flex; align-items:center; gap:15px;">
+        <a href="index.html" style="text-decoration:none; color:#fff; font-weight:500;">HOME</a>
+<a href="bestseller.html" style="text-decoration:none; color:#fff; font-weight:500;">BEST SELLERS</a>
+<a href="about.html" style="text-decoration:none; color:#fff; font-weight:500;">ABOUT US</a>
+<a href="cart.html" style="text-decoration:none; color:#fff; font-weight:500;">CART</a>
+<a href="list.html" style="text-decoration:none; color:#fff; font-weight:500;">LISTS</a>
+
+       
+        </details>
+
+    </div>
+</div>
+
+<!-- ================= CHECKOUT FORM ================= -->
+<section class="checkout-section">
+    <h2>Checkout</h2>
+
+    <div class="form-grid">
+        <input placeholder="Full Name">
+        <input placeholder="Phone Number">
+        <input placeholder="Email Address">
+        <input placeholder="Pincode">
+        <input placeholder="City">
+        <input placeholder="State">
+
+        <textarea rows="4" placeholder="Full Delivery Address"></textarea>
+
+        <select>
+            <option>Select Payment Method</option>
+            <option>Cash on Delivery</option>
+            <option>UPI</option>
+            <option>Credit / Debit Card</option>
+        </select>
+    </div>
+
+    <button class="place-order" onclick="placeOrder()">Place Order</button>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<style>
+    footer{
+        background:#5b0101;
+        color:#eee;
+        padding:60px 40px 20px;
+        font-family:Poppins, sans-serif;
+        margin-top:50px;
+    }
+
+    .footer-container{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:40px;
+        max-width:1200px;
+        margin:auto;
+    }
+
+    .footer-col h3{
+        font-family:'Playfair Display', serif;
+        font-size:22px;
+        margin-bottom:18px;
+        color:#fff;
+    }
+
+    .footer-col p{
+        font-size:14px;
+        line-height:1.7;
+        color:#ccc;
+    }
+
+    .footer-col ul{
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+
+    .footer-col ul li{
+        margin-bottom:10px;
+    }
+
+    .footer-col ul li a{
+        text-decoration:none;
+        color:#ccc;
+        font-size:14px;
+        transition:color 0.3s ease;
+    }
+
+    .footer-col ul li a:hover{
+        color:#fff;
+    }
+
+    .contact-info p{
+        margin-bottom:10px;
+        font-size:14px;
+    }
+
+    .contact-info span{
+        color:#fff;
+        font-weight:600;
+    }
+
+    .social-icons{
+        display:flex;
+        gap:15px;
+        margin-top:15px;
+    }
+
+    .social-icons a{
+        width:36px;
+        height:36px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background:#333;
+        color:#fff;
+        text-decoration:none;
+        font-size:16px;
+        transition:background 0.3s ease;
+    }
+
+    .social-icons a:hover{
+        background:#555;
+    }
+
+    .footer-bottom{
+        text-align:center;
+        border-top:1px solid #333;
+        margin-top:40px;
+        padding-top:20px;
+        font-size:13px;
+        color:#aaa;
+    }
+
+    @media(max-width:600px){
+        footer{
+            text-align:center;
+        }
+        .social-icons{
+            justify-content:center;
+        }
+    }
+</style>
+
+<footer>
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h3>CraftRoot</h3>
+            <p>
+                CraftRoot brings you authentic handcrafted products created by skilled artisans.
+                Every piece reflects tradition, culture, and timeless artistry.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Materials</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col contact-info">
+            <h3>Contact Us</h3>
+            <p><span>📍 Address:</span> Vellore, Tamil Nadu, India</p>
+            <p><span>📞 Phone:</span> +91 98765 43210</p>
+            <p><span>✉ Email:</span> support@craftroot.com</p>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-col">
+            <h3>Follow Us</h3>
+            <p>Stay connected for new collections & stories.</p>
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">i</a>
+                <a href="#">t</a>
+                <a href="#">y</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 CraftRoot. All Rights Reserved.
+    </div>
+</footer>
+
+
+<script>
+function placeOrder(){
+    alert("Order placed successfully! 🎉");
+    localStorage.removeItem("cart");
+    window.location.href="index.html";
+}
+</script>
+
+</body>
+</html>

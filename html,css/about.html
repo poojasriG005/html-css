@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | CraftRoot</title>
+<link rel="icon" href="./images/favicon.png">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Gafata&family=Galada&family=Style+Script&family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+/* ================= GENERAL ================= */
+body {
+    margin: 0;
+    padding:0;
+    font-family: 'Gafata', sans-serif;
+    background: #f4efe9;
+    color: #333;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ================= HEADER ================= */
+.banner1 {
+            background-color: #5b0101;
+            padding: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #shopname {
+            font-family: 'Galada', cursive;
+            font-size: 26px;
+            margin: 0;
+            white-space: nowrap;
+        }
+             .search-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 360px;
+            height: 32px;
+            border-radius: 20px;
+            border: none;
+            padding: 0 15px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: #777;
+            font-style: italic;
+        }
+
+
+        .option ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 14px;
+        }
+
+        .option ul li a {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .option ul li a:hover {
+            color: #ffcccb;
+        }
+
+        @media (max-width: 993px) {
+            .banner1 {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .option ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* ================= FEATURED CATEGORIES ================= */
+        .banner2 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 50px 20px;
+        }
+
+        .banner2product {
+            text-align: center;
+            flex: 1 1 200px;
+            max-width: 220px;
+            transition: transform 0.3s ease;
+        }
+
+        .banner2product:hover {
+            transform: scale(1.05);
+        }
+
+        .banner2-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .banner2product p {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* ================= MATERIALS ================= */
+        .banner3 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 50px 20px;
+        }
+
+        .banner3-container {
+            text-align: center;
+            flex: 1 1 200px;
+            max-width: 220px;
+            transition: transform 0.3s ease;
+        }
+
+        .banner3-container:hover {
+            transform: scale(1.05);
+        }
+
+        .banner3-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .banner3-container p {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.about-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+        font-family: 'Gafata', sans-serif;
+}
+
+.about-sub {
+    text-align: center;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #555;
+}
+
+.about-block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-block img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.timeline h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.timeline-item img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.timeline-content {
+    font-family: Poppins, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media(max-width:900px){
+    .timeline-item {
+        flex-direction: column;
+    }
+    .timeline-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="banner1">
+    <!-- LOGO -->
+    <h1 id="shopname">CraftRoot</h1>
+
+    <!-- CENTER SEARCH -->
+    <div class="search-box">
+        <input type="text" placeholder="Search handcrafted treasures…">
+    </div>
+
+    <!-- RIGHT MENU -->
+    <div style="display:flex; align-items:center; gap:15px;">
+        <a href="index.html">HOME</a>
+        <a href="bestseller.html">BEST SELLERS</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="cart.html">CART</a>
+         <a href="list.html">LISTS</a>
+
+       
+        </details>
+
+    </div>
+</div>
+
+<!-- ================= ABOUT SECTION ================= -->
+<section class="about-section">
+    <h1 class="about-title">Our Story</h1>
+    <p class="about-sub">
+        Rooted in tradition. Crafted with passion. Delivered with pride.
+    </p>
+
+    <div class="about-block">
+        <img src="images/artist.jpg" alt="Artisan at work">
+        <div class="about-text">
+            CraftRoot was born from a deep love for traditional craftsmanship and the skilled hands behind it.
+            We work closely with local artisans across India to bring authentic, handmade products into modern homes.
+            Every item is thoughtfully created using sustainable materials and age-old techniques passed through generations.
+        </div>
+
+        <img src="images/hand.png" alt="Handcrafted products">
+        <div class="about-text">
+            From elegant home décor to everyday handcrafted essentials, our collections celebrate culture, creativity,
+            and ethical living. When you choose CraftRoot, you support artisans, preserve heritage, and bring meaningful
+            stories into your space.
+        </div>
+
+        <img src="images/workshop.avif" alt="Artisan workshop">
+        <div class="about-text">
+            We believe handicrafts are more than products—they are expressions of identity and tradition.
+            Each piece reflects patience, dedication, and artistic excellence. Our mission is to connect artisans directly
+            with customers who value originality and craftsmanship. CraftRoot stands for authenticity, sustainability,
+            and timeless design.
+        </div>
+    </div>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section class="timeline">
+    <h2>Our Journey</h2>
+
+    <div class="timeline-item">
+        <img src="images/found.jpg" alt="Started CraftRoot">
+        <div class="timeline-content">
+            <h3>2015: Founded</h3>
+            <p>CraftRoot was founded to bring traditional handmade crafts into modern homes, supporting local artisans.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <img src="images/collabaration.jpg" alt="Collaboration with artisans">
+        <div class="timeline-content">
+            <h3>2017: Artisan Collaborations</h3>
+            <p>We expanded our network, partnering with more artisan communities across India for authentic collections.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <img src="images/signa.jpg" alt="Signature Collection">
+        <div class="timeline-content">
+            <h3>2020: Signature Collection</h3>
+            <p>Launched our signature handcrafted collection featuring unique brass, wood, and ceramic items.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <img src="images/today.jpg" alt="Today">
+        <div class="timeline-content">
+            <h3>2025: Today</h3>
+            <p>CraftRoot continues to connect customers with artisans, preserving cultural heritage and promoting ethical craftsmanship.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<style>
+    footer{
+        background:#5b0101;
+        color:#eee;
+        padding:60px 40px 20px;
+        font-family:Poppins, sans-serif;
+        margin-top:50px;
+    }
+
+    .footer-container{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap:40px;
+        max-width:1200px;
+        margin:auto;
+    }
+
+    .footer-col h3{
+        font-family:'Playfair Display', serif;
+        font-size:22px;
+        margin-bottom:18px;
+        color:#fff;
+    }
+
+    .footer-col p{
+        font-size:14px;
+        line-height:1.7;
+        color:#ccc;
+    }
+
+    .footer-col ul{
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+
+    .footer-col ul li{
+        margin-bottom:10px;
+    }
+
+    .footer-col ul li a{
+        text-decoration:none;
+        color:#ccc;
+        font-size:14px;
+        transition:color 0.3s ease;
+    }
+
+    .footer-col ul li a:hover{
+        color:#fff;
+    }
+
+    .contact-info p{
+        margin-bottom:10px;
+        font-size:14px;
+    }
+
+    .contact-info span{
+        color:#fff;
+        font-weight:600;
+    }
+
+    .social-icons{
+        display:flex;
+        gap:15px;
+        margin-top:15px;
+    }
+
+    .social-icons a{
+        width:36px;
+        height:36px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:50%;
+        background:#333;
+        color:#fff;
+        text-decoration:none;
+        font-size:16px;
+        transition:background 0.3s ease;
+    }
+
+    .social-icons a:hover{
+        background:#555;
+    }
+
+    .footer-bottom{
+        text-align:center;
+        border-top:1px solid #333;
+        margin-top:40px;
+        padding-top:20px;
+        font-size:13px;
+        color:#aaa;
+    }
+
+    @media(max-width:600px){
+        footer{
+            text-align:center;
+        }
+        .social-icons{
+            justify-content:center;
+        }
+    }
+</style>
+
+<footer>
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h3>CraftRoot</h3>
+            <p>
+                CraftRoot brings you authentic handcrafted products created by skilled artisans.
+                Every piece reflects tradition, culture, and timeless artistry.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Materials</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col contact-info">
+            <h3>Contact Us</h3>
+            <p><span>📍 Address:</span> Vellore, Tamil Nadu, India</p>
+            <p><span>📞 Phone:</span> +91 98765 43210</p>
+            <p><span>✉ Email:</span> support@craftroot.com</p>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-col">
+            <h3>Follow Us</h3>
+            <p>Stay connected for new collections & stories.</p>
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">i</a>
+                <a href="#">t</a>
+                <a href="#">y</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 CraftRoot. All Rights Reserved.
+    </div>
+</footer>
+
+
+</body>
+</html>
